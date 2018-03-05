@@ -1,5 +1,5 @@
 import { or, readOnly, equal, reads, alias } from '@ember/object/computed';
-import { later, cancel } from '@ember/runloop';
+import { later, cancel, bind } from '@ember/runloop';
 import $ from 'jquery';
 import { isEmpty } from '@ember/utils';
 import { assign } from '@ember/polyfills';
@@ -21,7 +21,6 @@ import RSVP from 'rsvp';
 import PromiseRace from '../utils/promise-race';
 import SharedAudioAccess from '../utils/shared-audio-access';
 import DebugLogging from '../mixins/debug-logging';
-import { bind } from 'ember-runloop';
 
 
 export default Service.extend(Evented, DebugLogging, {
